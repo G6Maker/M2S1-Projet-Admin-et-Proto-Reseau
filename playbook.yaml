@@ -1,0 +1,112 @@
+---
+- name: Create single LXD container
+  hosts: localhost
+  tasks:
+############################################################################################################
+############################################################################################################
+######################################## Création des conteneurs ###########################################
+############################################################################################################
+############################################################################################################
+
+    - name: Create gr01 LXD containers 
+      community.general.lxd_container:
+        name: "{{ item }}"
+        ignore_volatile_options: true
+        state: started
+        source:
+          type: image
+          mode: pull
+          server: https://images.linuxcontainers.org
+          protocol: simplestreams
+          alias: ubuntu/focal/amd64
+        profiles: ["default"]
+        type: virtual-machine
+        wait_for_ipv4_addresses: true
+        devices:
+          eth0:
+            type: nic
+            nictype: bridged
+            parent: lxdbr0
+      with_items: "{{ groups['gr01'] }}"
+
+    - name: Sleep for 15 seconds and continue with play
+      ansible.builtin.wait_for:
+        timeout: 15
+      delegate_to: localhost
+
+############################################################################################################
+############################################################################################################
+####################################### Install terraform on the one #######################################
+############################################################################################################
+############################################################################################################
+
+- name: Create single LXD container
+  hosts: gr01
+  tasks:
+    - name: Install gnupg on the container
+      ansible.builtin.apt:
+        pkg:
+          - gnupg
+        state: latest
+        update_cache: true
+
+    - name: Add terraform GPG apt Key
+      apt_key:
+        url: https://apt.releases.hashicorp.com/gpg
+        state: present
+    
+    - name: Add terraform Repository
+      ansible.builtin.apt_repository:
+        repo: deb https://apt.releases.hashicorp.com focal main
+        state: present
+
+    - name: Install terraform on the container
+      ansible.builtin.apt:
+        pkg:
+          - terraform
+        state: latest
+        update_cache: true
+
+############################################################################################################
+############################################################################################################
+######################################## Install docker on the one  ########################################
+############################################################################################################
+############################################################################################################
+
+    - name: Install Docker depedencies on the container
+      ansible.builtin.apt:
+        pkg:
+          - ca-certificates 
+          - curl 
+          - gnupg
+          - pip
+          - nfs-common
+        state: latest
+        update_cache: true
+      become: true
+
+    - name: Add Docker GPG apt Key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+    
+    - name: Add Docker Repository
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu focal stable
+        state: present
+      
+    - name: Install Docker Engine on the container
+      ansible.builtin.apt:
+        pkg:
+          - docker-ce
+          - docker-ce-cli 
+          - containerd.io
+          - docker-buildx-plugin
+          - docker-compose-plugin
+
+############################################################################################################
+############################################################################################################
+######################################  ######################################
+############################################################################################################
+############################################################################################################
+# Pour stop tout lxc stop proj && lxc rm proj
