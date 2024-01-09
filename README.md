@@ -1,5 +1,6 @@
 # M2S1-Projet-Admin-et-Proto-Reseau
 
+
 ## <u> Installation des paquets necessaires </u> 
 
 Pour cela, il suffit de lancer le playbook ansible:
@@ -10,6 +11,8 @@ sudo ansible-playbook -k playbook.yaml
 ## <u> Création du cluster avec terraform </u>
 
 ```sh
+#Dans le dossier terraform
+cd Terraform/
 #initialisation de terraform (installe les providers et ressources nécessaires)
 terraform init
 #Crée le cluster
@@ -37,3 +40,11 @@ Pour envoyer le commit:
 ```sh
 git push
 ```
+
+## outils de gestion kurber pratique mais pas obligatoire
+```sh
+sudo snap install k9s --devmode
+```
+[video k9s](https://www.youtube.com/watch?v=I_NF7bgbF3Q)
+
+[tuto argocd](https://argo-cd.readthedocs.io/en/stable/getting_started/)

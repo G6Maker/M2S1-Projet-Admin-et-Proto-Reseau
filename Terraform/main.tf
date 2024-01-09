@@ -26,14 +26,6 @@ resource "kind_cluster" "default" {
 
     node {
       role = "control-plane"
-      extra_port_mappings {
-        container_port = 80
-        host_port      = 8080
-      }
-      extra_port_mappings {
-        container_port = 443
-        host_port      = 8443
-      }
     }
 
     #https://kind.sigs.k8s.io/docs/user/quick-start/
