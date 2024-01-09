@@ -7,33 +7,33 @@
 ######################################## Création des conteneurs ###########################################
 ############################################################################################################
 ############################################################################################################
-
-    - name: Create gr01 LXD containers 
-      community.general.lxd_container:
-        name: "{{ item }}"
-        ignore_volatile_options: true
-        state: started
-        source:
-          type: image
-          mode: pull
-          server: https://images.linuxcontainers.org
-          protocol: simplestreams
-          alias: ubuntu/focal/amd64
-        profiles: ["default"]
-        type: virtual-machine
-        wait_for_ipv4_addresses: true
-        devices:
-          eth0:
-            type: nic
-            nictype: bridged
-            parent: lxdbr0
-      with_items: "{{ groups['gr01'] }}"
-
-    - name: Sleep for 15 seconds and continue with play
-      ansible.builtin.wait_for:
-        timeout: 15
-      delegate_to: localhost
-
+#
+#    - name: Create gr01 LXD containers 
+#      community.general.lxd_container:
+#        name: "{{ item }}"
+#        ignore_volatile_options: true
+#        state: started
+#        source:
+#          type: image
+#          mode: pull
+#          server: https://images.linuxcontainers.org
+#          protocol: simplestreams
+#          alias: ubuntu/focal/amd64
+#        profiles: ["default"]
+#        type: virtual-machine
+#        wait_for_ipv4_addresses: true
+#        devices:
+#          eth0:
+#            type: nic
+#            nictype: bridged
+#            parent: lxdbr0
+#      with_items: "{{ groups['gr01'] }}"
+#
+#    - name: Sleep for 15 seconds and continue with play
+#      ansible.builtin.wait_for:
+#        timeout: 15
+#      delegate_to: localhost
+#
 ############################################################################################################
 ############################################################################################################
 ####################################### Install terraform on the one #######################################
@@ -41,7 +41,7 @@
 ############################################################################################################
 
 - name: Create single LXD container
-  hosts: gr01
+  hosts: localhost
   tasks:
     - name: Install gnupg on the container
       ansible.builtin.apt:
@@ -72,52 +72,55 @@
 ######################################## Install docker on the one  ########################################
 ############################################################################################################
 ############################################################################################################
+#
+#    - name: Install Docker depedencies on the container
+#      ansible.builtin.apt:
+#        pkg:
+#          - ca-certificates 
+#          - curl 
+#          - gnupg
+#          - pip
+#          - nfs-common
+#        state: latest
+#        update_cache: true
+#      become: true
+#
+#    - name: Add Docker GPG apt Key
+#      apt_key:
+#        url: https://download.docker.com/linux/ubuntu/gpg
+#        state: present
+#    
+#    - name: Add Docker Repository
+#      apt_repository:
+#        repo: deb https://download.docker.com/linux/ubuntu focal stable
+#        state: present
+#      
+#    - name: Install Docker Engine on the container
+#      ansible.builtin.apt:
+#        pkg:
+#          - docker-ce
+#          - docker-ce-cli 
+#          - containerd.io
+#          - docker-buildx-plugin
+#          - docker-compose-plugin
+#
 
-    - name: Install Docker depedencies on the container
-      ansible.builtin.apt:
-        pkg:
-          - ca-certificates 
-          - curl 
-          - gnupg
-          - pip
-          - nfs-common
-        state: latest
-        update_cache: true
-      become: true
 
-    - name: Add Docker GPG apt Key
-      apt_key:
-        url: https://download.docker.com/linux/ubuntu/gpg
-        state: present
-    
-    - name: Add Docker Repository
-      apt_repository:
-        repo: deb https://download.docker.com/linux/ubuntu focal stable
-        state: present
-      
-    - name: Install Docker Engine on the container
-      ansible.builtin.apt:
-        pkg:
-          - docker-ce
-          - docker-ce-cli 
-          - containerd.io
-          - docker-buildx-plugin
-          - docker-compose-plugin
-
-############################################################################################################
-############################################################################################################
-##################################### Transfert des fichiers terraform #####################################
-############################################################################################################
-############################################################################################################
-
-    - name: Transfert des fichiers terraform
-      ansible.builtin.copy:
-        src: ./Terraform
-        dest: ./
-
-############################################################################################################
-############################################################################################################
-######################################  ######################################
-############################################################################################################
-############################################################################################################
-# Pour stop tout lxc stop proj && lxc rm proj
+#############################################################################################################
+#############################################################################################################
+###################################### Transfert des fichiers terraform #####################################
+#############################################################################################################
+#############################################################################################################
+#
+#    - name: Transfert des fichiers terraform
+#      ansible.builtin.copy:
+#        src: ./Terraform
+#        dest: ./
+#
+#############################################################################################################
+#############################################################################################################
+#######################################  ######################################
+#############################################################################################################
+#############################################################################################################
+## Pour stop tout lxc stop proj && lxc rm proj
+#

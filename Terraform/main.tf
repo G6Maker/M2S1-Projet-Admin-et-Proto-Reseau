@@ -18,7 +18,7 @@ terraform {
 provider "kind" {}
 
 resource "kind_cluster" "default" {
-  name = "proj-1"
+  name = "proj-2"
   wait_for_ready = true
   kind_config {
     kind = "Cluster"
@@ -35,17 +35,14 @@ resource "kind_cluster" "default" {
     #https://kind.sigs.k8s.io/docs/user/quick-start/
     node {
       role = "worker"
-      image = "kindest/node:v1.27.1"
     }
 
     node {
       role = "worker"
-      image = "kindest/node:v1.27.1"
     }
 
     node {
       role = "worker"
-      image = "kindest/node:v1.27.1"
     }
   }
 }
@@ -59,13 +56,9 @@ provider "helm" {
   }
 }
 
-resource "time_sleep" "wait_150_seconds" {
-  create_duration = "150s"
-}
-
 resource "helm_release" "argocd" {
   name  = "argocd"
-  depends_on = [time_sleep.wait_150_seconds]
+  depends_on = [kind_cluster.default]
 
   repository       = "https://argoproj.github.io/argo-helm"
   chart            = "argo-cd"
