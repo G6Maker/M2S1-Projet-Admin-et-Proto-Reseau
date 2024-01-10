@@ -72,9 +72,9 @@ resource "helm_release" "argocd-apps" {
   namespace        = "argocd"
   version          = "1.4.1"
 
-#  values = [
-#    file("argocd/application.yaml")
-#  ]
+  values = [
+    file("argocd/application.yaml")
+  ]
 
   depends_on = [helm_release.argocd]
 }

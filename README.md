@@ -45,6 +45,11 @@ git push
 ```sh
 sudo snap install k9s --devmode
 ```
+
+```sh
+kubectl get all -n argocd
+```
+
 [video k9s](https://www.youtube.com/watch?v=I_NF7bgbF3Q)
 
 [tuto argocd](https://argo-cd.readthedocs.io/en/stable/getting_started/)
