@@ -35,14 +35,26 @@ resource "kind_cluster" "default" {
     #https://kind.sigs.k8s.io/docs/user/quick-start/
     node {
       role = "worker"
+      extra_mounts {
+        host_path = "../files"
+        container_path = "/srv"
+      }
     }
 
     node {
       role = "worker"
+      extra_mounts {
+        host_path = "../files"
+        container_path = "/srv"
+      }
     }
 
     node {
       role = "worker"
+      extra_mounts {
+        host_path = "../files"
+        container_path = "/srv"
+      }
     }
   }
 }
