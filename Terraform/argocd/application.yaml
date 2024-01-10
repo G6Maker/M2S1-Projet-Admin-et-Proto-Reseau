@@ -1,21 +1,19 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: Mariadb
-spec:
-  destination:
-    name: ''
+applications:
+  - name: cluster-config
     namespace: argocd
-    server: 'https://kubernetes.default.svc'
-  source:
-    path: Terraform/argocd/manifests
-    repoURL: 'https://github.com/G6Maker/M2S1-Projet-Admin-et-Proto-Reseau.git'
-    targetRevision: main
-  sources: []
-  project: default
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
+    project: default
+    destination:
+      name: ''
+      namespace: argocd
+      server: 'https://kubernetes.default.svc'
+    source:
+      path: Terraform/argocd/manifests
+      repoURL: 'https://github.com/G6Maker/M2S1-Projet-Admin-et-Proto-Reseau.git'
+      targetRevision: main
+    syncPolicy:
+      automated:
+        prune: true
+        selfHeal: true
+      syncOptions:
       - CreateNamespace=true
+      
