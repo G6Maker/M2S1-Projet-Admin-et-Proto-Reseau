@@ -55,7 +55,7 @@ spec:
                 
             - name: nginx-config
               mountPath: /etc/nginx/conf.d/default.conf
-              subPath: /srv/nginx.conf
+              
                 
       volumes:
         - name: contents
@@ -64,5 +64,6 @@ spec:
             type: Directory
                 
         - name: nginx-config
-          configMap:
-            name: nginx
+          hostPath:
+            path: /srv/nginx.conf
+            type: File
