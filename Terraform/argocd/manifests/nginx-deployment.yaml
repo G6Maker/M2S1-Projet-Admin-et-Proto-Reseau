@@ -60,7 +60,7 @@ spec:
       volumes:
         - name: contents
           hostPath:
-            path: /var/website
+            path: content
             type: Directory
                 
         - name: nginx-config
