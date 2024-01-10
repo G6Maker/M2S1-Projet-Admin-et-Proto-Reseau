@@ -5,7 +5,7 @@ applications:
     source:
       repoURL: https://github.com/G6Maker/M2S1-Projet-Admin-et-Proto-Reseau.git
       targetRevision: HEAD
-      path: argocd/manifests/
+      path: Terraform/argocd/manifests
       directory:
         recurse: true
     destination:
