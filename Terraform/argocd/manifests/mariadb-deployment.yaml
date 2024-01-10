@@ -23,7 +23,20 @@ spec: # specification for deployment resource
             secretKeyRef:
               name: mariadb-secret
               key: mariadb-root-password
-        - name: MARIADB_DATABASE
-          value: nextcloud
+        - name: MYSQL_DATABASE
+          valueFrom:
+            secretKeyRef:
+              name: mariadb-secret
+              key: MYSQL_DATABASE
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: mariadb-secret
+              key: MYSQL_USER
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mariadb-secret
+              key: MYSQL_PASSWORD
 
 

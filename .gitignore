@@ -1,3 +1,4 @@
 Terraform/*
 !Terraform/main.tf
 !Terraform/argocd
+*-secrets.yaml
