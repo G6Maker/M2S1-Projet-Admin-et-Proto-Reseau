@@ -60,7 +60,7 @@ spec:
       volumes:
         - name: contents
           hostPath:
-            path: /home/maxime/Documents/admin et proto reseau/Projet/Terraform//manifests/content
+            path: /home/maxime/Documents/admin et proto reseau/Projet/Terraform/manifests/content
             type: Directory
                 
         - name: nginx-config

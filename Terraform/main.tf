@@ -26,6 +26,10 @@ resource "kind_cluster" "default" {
 
     node {
       role = "control-plane"
+      extraMounts {
+        hostPath = "../files"
+        containerPath = "/srv"
+      }
     }
 
     #https://kind.sigs.k8s.io/docs/user/quick-start/
