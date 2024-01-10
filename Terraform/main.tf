@@ -94,3 +94,17 @@ resource "helm_release" "argocd-apps" {
 
   depends_on = [helm_release.argocd]
 }
+
+resource "helm_release" "ingress_nginx" {
+  name       = "ingress-nginx"
+  repository = "https://kubernetes.github.io/ingress-nginx"
+  chart      = "ingress-nginx"
+  version    = "4.9.0"
+  namespace        = "nginx-ingress"
+  create_namespace = true
+  depends_on = [kind_cluster.default]
+  provisioner "local-exec" {
+    interpreter = ["bash", "-c"]
+    command     = "kubectl port-forward --namespace=ingress-nginx service/ingress-nginx-controller 8080:80"
+  }
+}

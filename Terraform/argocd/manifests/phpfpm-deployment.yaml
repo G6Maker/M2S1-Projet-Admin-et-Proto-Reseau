@@ -6,16 +6,11 @@ metadata:
   labels:
     app: phpfpm
     layer: backend
-        
 spec:
-
   type: ClusterIP
   selector:
-    
     app: phpfpm
-
   ports:
-    
     - port: 9000
       targetPort: 9000
 ---

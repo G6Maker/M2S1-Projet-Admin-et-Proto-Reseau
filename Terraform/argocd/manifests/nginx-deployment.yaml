@@ -1,24 +1,4 @@
 ---
-kind: Service 
-apiVersion: v1 
-metadata:
-  name: nginx
-  labels:
-    app: nginx
-    layer: frontend
-        
-spec:
-
-  type: ClusterIP
-  selector:
-    
-    app: nginx
-
-  ports:
-   
-    - port: 80
-      targetPort: 80
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -27,42 +7,46 @@ metadata:
     app: nginx
     layer: frontend
 spec:
-    
   replicas: 2
   selector:
     matchLabels:
       app: nginx
   template:
-    
-    
     metadata:
       labels:
-        app: nginx
-            
+        app: nginx   
     spec:
-    
       containers:
-      
         - name: nginx
           image: nginx:alpine
           ports:
             - containerPort: 80
-          volumeMounts:
-            
+          volumeMounts:     
             - mountPath: /var/www/html/
-              name: contents
-                
+              name: contents           
             - name: nginx-config
-              mountPath: /etc/nginx/conf.d/default.conf
-              
-                
+              mountPath: /etc/nginx/conf.d/default.conf            
       volumes:
         - name: contents
           hostPath:
             path: /srv/content
-            type: Directory
-                
+            type: Directory      
         - name: nginx-config
           hostPath:
             path: /srv/nginx.conf
             type: File
+---
+kind: Service 
+apiVersion: v1 
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+    layer: frontend
+spec:
+  selector:
+    app: nginx
+  type: NodePort
+  ports:
+    - port: 8080
+      targetPort: 80
