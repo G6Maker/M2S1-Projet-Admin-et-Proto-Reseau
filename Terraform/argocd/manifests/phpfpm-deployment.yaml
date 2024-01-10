@@ -54,5 +54,5 @@ spec:
       volumes:
         - name: contents
           hostPath:
-            path: /var/website
+            path: /srv/content
             type: Directory

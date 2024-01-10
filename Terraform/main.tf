@@ -26,9 +26,9 @@ resource "kind_cluster" "default" {
 
     node {
       role = "control-plane"
-      extraMounts {
-        hostPath = "../files"
-        containerPath = "/srv"
+      extra_mounts {
+        host_path = "../files"
+        container_path = "/srv"
       }
     }
 
