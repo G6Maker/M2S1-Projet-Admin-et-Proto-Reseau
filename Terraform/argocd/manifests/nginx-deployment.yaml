@@ -22,42 +22,32 @@ metadata:
     app: nginx
     layer: frontend
 spec:
-    
   replicas: 2
   selector:
     matchLabels:
       app: nginx
   template:
-    
-    
     metadata:
       labels:
         app: nginx
-            
     spec:
-    
       containers:
-      
         - name: nginx
           image: nginx:alpine
           ports:
             - containerPort: 80
           volumeMounts:
-            
             - mountPath: /var/www/html/
               name: contents
-                
             - name: nginx-config
-              mountPath: /etc/nginx/conf.d/default.conf
-              
-                
+              mountPath: /etc/nginx/conf.d/default.conf    
       volumes:
         - name: contents
           hostPath:
             path: /srv/content
             type: Directory
-                
         - name: nginx-config
           hostPath:
             path: /srv/nginx.conf
             type: File
+      revisionHistoryLimit: 2

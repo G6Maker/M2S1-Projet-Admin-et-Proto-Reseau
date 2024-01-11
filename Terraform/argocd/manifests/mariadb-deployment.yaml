@@ -54,5 +54,5 @@ spec: # specification for deployment resource
             secretKeyRef:
               name: mariadb-secret
               key: MYSQL_PASSWORD
-
+      revisionHistoryLimit: 2
 
