@@ -1,0 +1,69 @@
+Certificate:
+    Data:
+        Version: 1 (0x0)
+        Serial Number: 4660 (0x1234)
+        Signature Algorithm: md5WithRSAEncryption
+        Issuer: C=FR, ST=Seine-Maritime, O=M2SSI, CN=CA-projet-admin
+        Validity
+            Not Before: Jan 11 16:32:38 2024 GMT
+            Not After : Jan 10 16:32:38 2025 GMT
+        Subject: C=FR, ST=Seine-Maritime, O=M2SSI, CN=localhost
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:a6:89:b6:28:03:1e:7c:90:47:c8:3c:48:f2:f9:
+                    b0:f9:31:a8:27:56:0e:ed:bf:ea:4f:5a:e9:c5:66:
+                    f2:d8:81:c6:ee:8a:28:c9:63:b8:93:07:89:a5:bb:
+                    96:fe:10:87:d9:7a:fe:ea:1b:ee:e0:ba:5d:11:bf:
+                    fd:58:0b:75:9a:d5:c9:58:c6:f9:a3:a3:77:7c:8d:
+                    c1:81:d7:f5:be:92:da:ea:c2:19:6d:6c:c8:01:9f:
+                    bb:71:c0:77:d6:c1:3a:56:62:da:c7:02:b1:c2:83:
+                    36:3a:bc:e9:3b:10:b2:21:85:74:a1:0a:42:77:43:
+                    c0:2a:fd:a0:d6:dd:6b:87:32:5e:a3:dc:09:b4:5e:
+                    dc:a8:e5:f7:ed:d1:97:b7:5f:59:e9:ea:9d:78:65:
+                    b1:20:84:ca:7c:07:a8:66:9e:f6:d3:67:fe:9d:ca:
+                    db:9d:13:6c:09:4f:db:6c:08:3f:0c:00:ff:ff:58:
+                    ec:83:24:b2:48:1c:90:79:3a:88:21:f4:23:c6:d1:
+                    50:73:e1:61:c8:82:65:44:66:b1:63:7a:81:9b:c4:
+                    c8:b0:f3:17:ad:fb:42:47:cb:c1:c5:b0:a4:be:80:
+                    a3:5a:de:21:f7:a1:46:83:94:a8:04:fc:bd:e4:2b:
+                    b7:59:cc:3d:bd:e1:36:f0:c1:ed:f6:dd:e8:f1:c5:
+                    65:b5
+                Exponent: 65537 (0x10001)
+    Signature Algorithm: md5WithRSAEncryption
+    Signature Value:
+        79:15:82:be:38:e4:96:e2:f9:e0:ee:57:35:a0:de:35:8a:9b:
+        f6:cb:e7:f1:a9:8f:33:d1:d9:2f:b2:be:ae:57:af:37:17:44:
+        e4:6b:c4:27:d5:5d:3b:69:de:d3:b7:ea:80:a1:b4:73:55:3b:
+        27:70:3b:49:4d:1b:33:bd:8a:37:70:91:de:fb:bd:d0:be:75:
+        b4:1c:db:c6:d3:1b:d2:1a:01:a1:71:47:63:58:0a:be:3e:9f:
+        a4:30:4e:00:18:f8:37:f0:aa:ea:96:83:63:9e:17:ee:5f:9a:
+        dc:d5:e7:10:49:d6:11:74:15:b1:3d:65:46:23:ec:1a:7b:64:
+        b6:8f:43:0b:e0:70:42:e5:8a:fd:02:f8:1c:d4:5b:da:4b:ed:
+        22:19:ca:1a:dd:11:7b:5b:95:d5:4a:4a:3d:7f:7c:44:d1:1b:
+        8b:d9:00:95:8b:cf:4b:32:84:9f:ce:fc:cb:ea:40:5a:4a:fe:
+        68:a9:a6:58:d0:b4:c3:74:05:54:39:d4:50:93:b0:f6:0a:74:
+        f0:d3:0a:dd:b3:d5:5e:c4:58:74:53:e9:5d:3f:a6:6c:1d:b3:
+        7a:a5:9c:0a:0f:88:29:de:1f:9a:31:dc:53:d3:ae:23:9c:42:
+        c0:c0:5a:16:ff:eb:a1:75:a0:7f:30:45:7b:67:75:fb:c4:5b:
+        b1:0c:28:ed
+-----BEGIN CERTIFICATE-----
+MIIDDzCCAfcCAhI0MA0GCSqGSIb3DQEBBAUAMFAxCzAJBgNVBAYTAkZSMRcwFQYD
+VQQIDA5TZWluZS1NYXJpdGltZTEOMAwGA1UECgwFTTJTU0kxGDAWBgNVBAMMD0NB
+LXByb2pldC1hZG1pbjAeFw0yNDAxMTExNjMyMzhaFw0yNTAxMTAxNjMyMzhaMEox
+CzAJBgNVBAYTAkZSMRcwFQYDVQQIDA5TZWluZS1NYXJpdGltZTEOMAwGA1UECgwF
+TTJTU0kxEjAQBgNVBAMMCWxvY2FsaG9zdDCCASIwDQYJKoZIhvcNAQEBBQADggEP
+ADCCAQoCggEBAKaJtigDHnyQR8g8SPL5sPkxqCdWDu2/6k9a6cVm8tiBxu6KKMlj
+uJMHiaW7lv4Qh9l6/uob7uC6XRG//VgLdZrVyVjG+aOjd3yNwYHX9b6S2urCGW1s
+yAGfu3HAd9bBOlZi2scCscKDNjq86TsQsiGFdKEKQndDwCr9oNbda4cyXqPcCbRe
+3Kjl9+3Rl7dfWenqnXhlsSCEynwHqGae9tNn/p3K250TbAlP22wIPwwA//9Y7IMk
+skgckHk6iCH0I8bRUHPhYciCZURmsWN6gZvEyLDzF637QkfLwcWwpL6Ao1reIfeh
+RoOUqAT8veQrt1nMPb3hNvDB7fbd6PHFZbUCAwEAATANBgkqhkiG9w0BAQQFAAOC
+AQEAeRWCvjjkluL54O5XNaDeNYqb9svn8amPM9HZL7K+rlevNxdE5GvEJ9VdO2ne
+07fqgKG0c1U7J3A7SU0bM72KN3CR3vu90L51tBzbxtMb0hoBoXFHY1gKvj6fpDBO
+ABj4N/Cq6paDY54X7l+a3NXnEEnWEXQVsT1lRiPsGntkto9DC+BwQuWK/QL4HNRb
+2kvtIhnKGt0Re1uV1UpKPX98RNEbi9kAlYvPSzKEn878y+pAWkr+aKmmWNC0w3QF
+VDnUUJOw9gp08NMK3bPVXsRYdFPpXT+mbB2zeqWcCg+IKd4fmjHcU9OuI5xCwMBa
+Fv/roXWgfzBFe2d1+8RbsQwo7Q==
+-----END CERTIFICATE-----

@@ -3,3 +3,8 @@ Terraform/*
 !Terraform/argocd
 files/content/projetWeb/config/config_db.php
 files/content/phpinfo.php
+files/certs/*
+!files/certs/ca-cert.pem
+!files/certs/CA.key
+!files/certs/localhost.crt
+!files/certs/localhost.key

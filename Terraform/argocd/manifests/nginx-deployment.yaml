@@ -40,7 +40,9 @@ spec:
             - mountPath: /var/www/html/
               name: contents
             - name: nginx-config
-              mountPath: /etc/nginx/conf.d/default.conf    
+              mountPath: /etc/nginx/conf.d/default.conf
+            - mountPath: /usr/local/nginx/conf/
+              name: certs
       volumes:
         - name: contents
           hostPath:
@@ -50,4 +52,7 @@ spec:
           hostPath:
             path: /srv/nginx.conf
             type: File
-      revisionHistoryLimit: 2
+        - name: certs
+          hostPath:
+            path: /srv/certs
+            type: Directory
