@@ -5,17 +5,12 @@ metadata:
   name: nginx
   labels:
     app: nginx
-    layer: frontend
-        
+    layer: frontend    
 spec:
-
   type: ClusterIP
   selector:
-    
     app: nginx
-
   ports:
-   
     - port: 80
       targetPort: 80
 ---
