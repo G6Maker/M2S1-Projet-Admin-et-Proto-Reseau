@@ -1,5 +1,5 @@
 Terraform/*
 !Terraform/main.tf
 !Terraform/argocd
-files/content/config/config_db.php
+files/content/projetWeb/config/config_db.php
 files/content/phpinfo.php
