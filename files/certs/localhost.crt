@@ -1,12 +1,12 @@
 Certificate:
     Data:
         Version: 1 (0x0)
-        Serial Number: 4660 (0x1234)
-        Signature Algorithm: md5WithRSAEncryption
+        Serial Number: 4661 (0x1235)
+        Signature Algorithm: sha256WithRSAEncryption
         Issuer: C=FR, ST=Seine-Maritime, O=M2SSI, CN=CA-projet-admin
         Validity
-            Not Before: Jan 11 16:32:38 2024 GMT
-            Not After : Jan 10 16:32:38 2025 GMT
+            Not Before: Jan 11 17:34:20 2024 GMT
+            Not After : Jan 10 17:34:20 2025 GMT
         Subject: C=FR, ST=Seine-Maritime, O=M2SSI, CN=localhost
         Subject Public Key Info:
             Public Key Algorithm: rsaEncryption
@@ -31,27 +31,27 @@ Certificate:
                     b7:59:cc:3d:bd:e1:36:f0:c1:ed:f6:dd:e8:f1:c5:
                     65:b5
                 Exponent: 65537 (0x10001)
-    Signature Algorithm: md5WithRSAEncryption
+    Signature Algorithm: sha256WithRSAEncryption
     Signature Value:
-        79:15:82:be:38:e4:96:e2:f9:e0:ee:57:35:a0:de:35:8a:9b:
-        f6:cb:e7:f1:a9:8f:33:d1:d9:2f:b2:be:ae:57:af:37:17:44:
-        e4:6b:c4:27:d5:5d:3b:69:de:d3:b7:ea:80:a1:b4:73:55:3b:
-        27:70:3b:49:4d:1b:33:bd:8a:37:70:91:de:fb:bd:d0:be:75:
-        b4:1c:db:c6:d3:1b:d2:1a:01:a1:71:47:63:58:0a:be:3e:9f:
-        a4:30:4e:00:18:f8:37:f0:aa:ea:96:83:63:9e:17:ee:5f:9a:
-        dc:d5:e7:10:49:d6:11:74:15:b1:3d:65:46:23:ec:1a:7b:64:
-        b6:8f:43:0b:e0:70:42:e5:8a:fd:02:f8:1c:d4:5b:da:4b:ed:
-        22:19:ca:1a:dd:11:7b:5b:95:d5:4a:4a:3d:7f:7c:44:d1:1b:
-        8b:d9:00:95:8b:cf:4b:32:84:9f:ce:fc:cb:ea:40:5a:4a:fe:
-        68:a9:a6:58:d0:b4:c3:74:05:54:39:d4:50:93:b0:f6:0a:74:
-        f0:d3:0a:dd:b3:d5:5e:c4:58:74:53:e9:5d:3f:a6:6c:1d:b3:
-        7a:a5:9c:0a:0f:88:29:de:1f:9a:31:dc:53:d3:ae:23:9c:42:
-        c0:c0:5a:16:ff:eb:a1:75:a0:7f:30:45:7b:67:75:fb:c4:5b:
-        b1:0c:28:ed
+        43:8b:08:71:41:cd:ec:2b:c2:ea:45:e7:7f:63:4e:00:f2:33:
+        64:97:81:2a:00:a6:1d:a5:d0:ad:e4:5f:e5:ed:aa:82:14:a8:
+        3a:b5:80:75:de:4a:66:e2:df:9d:b0:bf:6d:c3:82:e5:44:e6:
+        4d:e6:0b:b2:2a:8f:53:0d:47:73:94:02:cc:8e:a1:41:78:3a:
+        2f:df:87:d6:b9:5f:e4:48:95:0c:c3:47:51:50:1e:86:fe:77:
+        77:d1:65:91:76:67:bf:44:dc:6a:7a:9b:ed:78:eb:09:3c:f6:
+        58:3e:f0:2b:66:8e:36:5e:c7:ba:a4:a5:e8:15:97:f6:de:09:
+        fc:9a:96:d6:73:62:23:78:91:cc:e9:48:35:c5:53:35:e9:d5:
+        9d:06:e6:06:6b:11:b5:51:a9:10:bc:dc:70:fe:d8:0e:6f:ff:
+        d6:67:38:e6:d5:05:2f:1b:fc:13:07:63:92:78:ee:f3:b1:01:
+        1a:7e:9e:a9:64:3d:ea:15:0d:9c:84:43:07:92:11:3b:2d:2d:
+        63:77:fb:43:dd:f1:6c:65:51:67:02:94:4d:7b:d1:11:17:8c:
+        61:99:11:19:a6:dd:5f:f0:bc:d7:85:cd:10:53:87:75:f1:a4:
+        73:b2:78:ff:92:ec:ea:8f:52:f7:84:4f:cc:56:8e:fd:c2:8b:
+        62:fa:4d:71
 -----BEGIN CERTIFICATE-----
-MIIDDzCCAfcCAhI0MA0GCSqGSIb3DQEBBAUAMFAxCzAJBgNVBAYTAkZSMRcwFQYD
+MIIDDzCCAfcCAhI1MA0GCSqGSIb3DQEBCwUAMFAxCzAJBgNVBAYTAkZSMRcwFQYD
 VQQIDA5TZWluZS1NYXJpdGltZTEOMAwGA1UECgwFTTJTU0kxGDAWBgNVBAMMD0NB
-LXByb2pldC1hZG1pbjAeFw0yNDAxMTExNjMyMzhaFw0yNTAxMTAxNjMyMzhaMEox
+LXByb2pldC1hZG1pbjAeFw0yNDAxMTExNzM0MjBaFw0yNTAxMTAxNzM0MjBaMEox
 CzAJBgNVBAYTAkZSMRcwFQYDVQQIDA5TZWluZS1NYXJpdGltZTEOMAwGA1UECgwF
 TTJTU0kxEjAQBgNVBAMMCWxvY2FsaG9zdDCCASIwDQYJKoZIhvcNAQEBBQADggEP
 ADCCAQoCggEBAKaJtigDHnyQR8g8SPL5sPkxqCdWDu2/6k9a6cVm8tiBxu6KKMlj
@@ -59,11 +59,11 @@ uJMHiaW7lv4Qh9l6/uob7uC6XRG//VgLdZrVyVjG+aOjd3yNwYHX9b6S2urCGW1s
 yAGfu3HAd9bBOlZi2scCscKDNjq86TsQsiGFdKEKQndDwCr9oNbda4cyXqPcCbRe
 3Kjl9+3Rl7dfWenqnXhlsSCEynwHqGae9tNn/p3K250TbAlP22wIPwwA//9Y7IMk
 skgckHk6iCH0I8bRUHPhYciCZURmsWN6gZvEyLDzF637QkfLwcWwpL6Ao1reIfeh
-RoOUqAT8veQrt1nMPb3hNvDB7fbd6PHFZbUCAwEAATANBgkqhkiG9w0BAQQFAAOC
-AQEAeRWCvjjkluL54O5XNaDeNYqb9svn8amPM9HZL7K+rlevNxdE5GvEJ9VdO2ne
-07fqgKG0c1U7J3A7SU0bM72KN3CR3vu90L51tBzbxtMb0hoBoXFHY1gKvj6fpDBO
-ABj4N/Cq6paDY54X7l+a3NXnEEnWEXQVsT1lRiPsGntkto9DC+BwQuWK/QL4HNRb
-2kvtIhnKGt0Re1uV1UpKPX98RNEbi9kAlYvPSzKEn878y+pAWkr+aKmmWNC0w3QF
-VDnUUJOw9gp08NMK3bPVXsRYdFPpXT+mbB2zeqWcCg+IKd4fmjHcU9OuI5xCwMBa
-Fv/roXWgfzBFe2d1+8RbsQwo7Q==
+RoOUqAT8veQrt1nMPb3hNvDB7fbd6PHFZbUCAwEAATANBgkqhkiG9w0BAQsFAAOC
+AQEAQ4sIcUHN7CvC6kXnf2NOAPIzZJeBKgCmHaXQreRf5e2qghSoOrWAdd5KZuLf
+nbC/bcOC5UTmTeYLsiqPUw1Hc5QCzI6hQXg6L9+H1rlf5EiVDMNHUVAehv53d9Fl
+kXZnv0Tcanqb7XjrCTz2WD7wK2aONl7HuqSl6BWX9t4J/JqW1nNiI3iRzOlINcVT
+NenVnQbmBmsRtVGpELzccP7YDm//1mc45tUFLxv8Ewdjknju87EBGn6eqWQ96hUN
+nIRDB5IROy0tY3f7Q93xbGVRZwKUTXvREReMYZkRGabdX/C814XNEFOHdfGkc7J4
+/5Ls6o9S94RPzFaO/cKLYvpNcQ==
 -----END CERTIFICATE-----

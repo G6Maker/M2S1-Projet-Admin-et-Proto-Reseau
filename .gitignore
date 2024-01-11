@@ -7,4 +7,4 @@ files/certs/*
 !files/certs/ca-cert.pem
 !files/certs/CA.key
 !files/certs/localhost.crt
-!files/certs/localhost.key
+files/certs/localhost.key
