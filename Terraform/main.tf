@@ -87,7 +87,7 @@ resource "helm_release" "argocd-apps" {
   chart            = "argocd-apps"
   namespace        = "argocd"
   version          = "1.4.1"
-
+  
   values = [
     file("argocd/application.yaml")
   ]
@@ -95,16 +95,19 @@ resource "helm_release" "argocd-apps" {
   depends_on = [helm_release.argocd]
 }
 
-resource "helm_release" "ingress_nginx" {
-  name       = "ingress-nginx"
-  repository = "https://kubernetes.github.io/ingress-nginx"
-  chart      = "ingress-nginx"
-  version    = "4.9.0"
-  namespace        = "nginx-ingress"
-  create_namespace = true
-  depends_on = [kind_cluster.default]
-  provisioner "local-exec" {
-    interpreter = ["bash", "-c"]
-    command     = "kubectl port-forward --namespace=ingress-nginx service/ingress-nginx-controller 8080:80"
-  }
+provider "kubectl" {
+  host = kind_cluster.default.endpoint
+  cluster_ca_certificate = kind_cluster.default.cluster_ca_certificate
+  client_certificate = kind_cluster.default.client_certificate
+  client_key = kind_cluster.default.client_key
+}
+
+data "kubectl_file_documents" "docs" {
+    content = file("ingress-nginx-manifest.yaml")
+}
+
+resource "kubectl_manifest" "ingress-nginx" {
+    for_each  = data.kubectl_file_documents.docs.manifests
+    yaml_body = each.value
+    depends_on = [kind_cluster.default]
 }
