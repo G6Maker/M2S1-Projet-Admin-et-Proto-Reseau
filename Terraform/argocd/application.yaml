@@ -7,8 +7,8 @@ applications:
       namespace: argocd
       server: 'https://kubernetes.default.svc'
     source:
-      path: Terraform/argocd/manifests
-      repoURL: 'https://github.com/G6Maker/M2S1-Projet-Admin-et-Proto-Reseau.git'
+      path: manifests
+      repoURL: 'https://gitlab.com/M2SSI_CDR/Terraform-Kubernetes-ArgoCD-Gitlab.git'
       targetRevision: main
     syncPolicy:
       automated:
